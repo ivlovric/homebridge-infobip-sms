@@ -11,6 +11,7 @@
 
 This is a Homebridge https://homebridge.io/ accessory plugin for Infobip SMS platform that enables sending of SMS to specified number with specific message. It can be trigerred manually or by automating and trigering by other Homekit devices or sensors for enhanced home automation flows.
 
+<img width="1594" alt="Screenshot 2022-09-26 at 09 57 38" src="https://user-images.githubusercontent.com/37185376/192244713-1c986bfb-0964-4d1f-bc05-e52a70818ae9.png">
 
 It is forked from generic switch plugin https://github.com/nfarina/homebridge-dummy 
 
@@ -38,9 +39,11 @@ npm install
 
 Configuration can be done by UI in homebridge-config-ui interface.
 Example:
-<img width="870" alt="Screenshot 2022-06-29 at 14 30 54" src="https://user-images.githubusercontent.com/37185376/176437207-b2589e46-f8c0-4b38-8ce6-a1d3cca567ca.png">
+<img width="855" alt="Screenshot 2022-09-26 at 11 22 32" src="https://user-images.githubusercontent.com/37185376/192244656-84e505c6-762c-435a-8127-11c9c6dadf9e.png">
 
-<img width="796" alt="Screenshot 2022-06-29 at 14 31 26" src="https://user-images.githubusercontent.com/37185376/176437494-29cd6715-4073-4fa5-aafe-ebe6db8c1f72.png">
+
+![Screenshot 2022-09-26 at 11 22 49](https://user-images.githubusercontent.com/37185376/192244548-76f74ef8-b43e-4a7d-924b-2c5cedff2d6c.jpg)
+
 
 
 ## Build Plugin
@@ -74,5 +77,3 @@ npm run watch
 ```
 
 This will launch an instance of Homebridge in debug mode which will restart every time you make a change to the source code. It will load the config stored in the default location under `~/.homebridge`. You may need to stop other running instances of Homebridge while using this command to prevent conflicts. You can adjust the Homebridge startup command in the [`nodemon.json`](./nodemon.json) file.
-
-
