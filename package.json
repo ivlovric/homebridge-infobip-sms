@@ -1,6 +1,6 @@
 {
   "name": "homebridge-infobip-sms",
-  "version": "0.1",
+  "version": "0.1.0",
   "description": "Infobip SMS switch for Homebridge",
   "license": "ISC",
   "keywords": [
