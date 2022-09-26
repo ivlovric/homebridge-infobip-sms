@@ -28,22 +28,30 @@
                 "required": true,
                 "description": "Infobip provided API key"
             },
-            "CalledNumber": {
-                "title": "CalledNumber",
-                "type": "number",
-                "description": "Number to call on event trigger"
+            "BaseURL": {
+                "title": "BaseURL",
+                "type": "string",
+                "required": true,
+                "description": "Infobip provided base IRL"
             },
-            "CallingNumber": {
-                "title": "CallingNumber",
+            "SMStoNumber": {
+                "title": "SMStoNumber",
                 "type": "number",
-                "description": "Number from which call should originate on event trigger"
+                "required": true,
+                "description": "Number to send SMS to on event trigger"
+            },
+            "SMSfromNumber": {
+                "title": "SMSfromNumber",
+                "type": "string",
+                "default": "InfobipSMS",
+                "description": "The sender ID which SMS should originate on event trigger"
             },
             "SMSText": {
                 "title": "SMSText",
                 "type": "string",
                 "required": true,
-                "default": "Homebridge call via Infobip call SMS API",
-                "description": "Text to speak when called on trigger event"
+                "default": "Homebridge message via Infobip SMS API",
+                "description": "SMS text message to send when called on trigger event"
             }
         }
     }

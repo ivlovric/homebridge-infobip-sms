@@ -9,7 +9,7 @@ module.exports = function(homebridge) {
   Service = homebridge.hap.Service;
   Characteristic = homebridge.hap.Characteristic;
   HomebridgeAPI = homebridge;
-  homebridge.registerAccessory("homebridge-infobip-call", "InfobipSMS", InfobipSMS);
+  homebridge.registerAccessory("homebridge-infobip-sms", "InfobipSMS", InfobipSMS);
 }
 
 function InfobipSMS(log, config) {
@@ -18,8 +18,9 @@ function InfobipSMS(log, config) {
   this.stateful = config.stateful;
   this.time = config.time ? config.time : 1000;
   this.APIKey = config.APIKey;
-  this.CalledNumber = config.CalledNumber;
-  this.CallingNumber = config.CallingNumber;
+  this.BaseURL = config.BaseURL;
+  this.SMStoNumber = config.SMStoNumber;
+  this.SMSfromNumber = config.SMSfromNumber;
   this.SMSText = config.SMSText;
 
   this.timer = null;
@@ -70,26 +71,21 @@ InfobipSMS.prototype._setOn = function(on, callback) {
     this.log.info('Sending Infobip API request.');
 
  //var url = "http://10.116.118.127:8000";
- var url = "http://xr5elq.api.infobip.com/tts/3/advanced";
+ var url = this.BaseURL + "/sms/2/text/advanced";
 
 var JSONObject = {
   "messages": [
     {
-      "from": this.CallingNumber,
-      "destinations": [
-        {
-          "to": this.CalledNumber
+        "destinations": 
+    [
+                {
+                    "to": this.SMStoNumber
+                }
+    ],
+            "from": this.SMSfromNumber,
+            "text": this.SMSText
         }
-      ],
-      "text": this.TTSText,
-      "language": "en",
-      "voice": {
-        "name": "Joanna",
-        "gender": "female"
-      },
-      "speechRate": 1
-    }
-  ]
+    ]
 };
 
 request({
