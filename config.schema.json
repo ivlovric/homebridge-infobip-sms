@@ -32,7 +32,7 @@
                 "title": "BaseURL",
                 "type": "string",
                 "required": true,
-                "description": "Infobip provided base IRL"
+                "description": "Infobip provided base URL"
             },
             "SMStoNumber": {
                 "title": "SMStoNumber",

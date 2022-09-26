@@ -11,8 +11,6 @@
 
 This is a Homebridge https://homebridge.io/ accessory plugin for Infobip SMS platform that enables sending of SMS to specified number with specific message. It can be trigerred manually or by automating and trigering by other Homekit devices or sensors for enhanced home automation flows.
 
-<img width="1594" alt="Screenshot 2022-09-26 at 09 57 38" src="https://user-images.githubusercontent.com/37185376/192244713-1c986bfb-0964-4d1f-bc05-e52a70818ae9.png">
-
 It is forked from generic switch plugin https://github.com/nfarina/homebridge-dummy 
 
 ## Get infobip subscription
@@ -22,6 +20,8 @@ Infobip offers trial accout that can be created freely with fair ammount of cred
 Getting started with Infobip APIs - https://www.infobip.com/docs/api
 
 Trial account registration page - https://www.infobip.com/signup
+<img width="1594" alt="Screenshot 2022-09-26 at 09 57 38" src="https://user-images.githubusercontent.com/37185376/192244713-1c986bfb-0964-4d1f-bc05-e52a70818ae9.png">
+
 
 ## Install
 
