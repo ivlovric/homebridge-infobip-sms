@@ -1,0 +1,50 @@
+{
+    "pluginAlias": "InfobipTTS",
+    "pluginType": "accessory",
+    "singular": false,
+    "schema": {
+        "type": "object",
+        "properties": {
+            "name": {
+                "title": "Name",
+                "type": "string",
+                "required": true
+            },
+            "stateful": {
+                "title": "Stateful",
+                "type": "boolean",
+                "default": false,
+                "description": "The switch remains on instead of being automatically turned off."
+            },
+            "time": {
+                "title": "Time",
+                "type": "number",
+                "default": 1000,
+                "description": "The switch will turn off after this number of milliseconds. Not used if the switch is stateful."
+            },
+            "APIKey": {
+                "title": "APIKey",
+                "type": "string",
+                "required": true,
+                "description": "Infobip provided API key"
+            },
+            "CalledNumber": {
+                "title": "CalledNumber",
+                "type": "number",
+                "description": "Number to call on event trigger"
+            },
+            "CallingNumber": {
+                "title": "CallingNumber",
+                "type": "number",
+                "description": "Number from which call should originate on event trigger"
+            },
+            "TTSText": {
+                "title": "TTSText",
+                "type": "string",
+                "required": true,
+                "default": "Homebridge call via Infobip call TTS API",
+                "description": "Text to speak when called on trigger event"
+            }
+        }
+    }
+}
