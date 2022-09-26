@@ -9,10 +9,10 @@ module.exports = function(homebridge) {
   Service = homebridge.hap.Service;
   Characteristic = homebridge.hap.Characteristic;
   HomebridgeAPI = homebridge;
-  homebridge.registerAccessory("homebridge-infobip-call", "InfobipTTS", InfobipTTS);
+  homebridge.registerAccessory("homebridge-infobip-call", "InfobipSMS", InfobipSMS);
 }
 
-function InfobipTTS(log, config) {
+function InfobipSMS(log, config) {
   this.log = log;
   this.name = config.name;
   this.stateful = config.stateful;
@@ -20,7 +20,7 @@ function InfobipTTS(log, config) {
   this.APIKey = config.APIKey;
   this.CalledNumber = config.CalledNumber;
   this.CallingNumber = config.CallingNumber;
-  this.TTSText = config.TTSText;
+  this.SMSText = config.SMSText;
 
   this.timer = null;
   this._service = new Service.Switch(this.name);
@@ -28,7 +28,7 @@ function InfobipTTS(log, config) {
   this.informationService = new Service.AccessoryInformation();
   this.informationService
       .setCharacteristic(Characteristic.Manufacturer, 'Homebridge')
-      .setCharacteristic(Characteristic.Model, 'Infobip TTS Switch')
+      .setCharacteristic(Characteristic.Model, 'Infobip SMS Switch')
       .setCharacteristic(Characteristic.FirmwareRevision, HomebridgeDummyVersion)
       .setCharacteristic(Characteristic.SerialNumber, 'Infobip-' + this.name.replace(/\s/g, '-'));
   
@@ -51,11 +51,11 @@ function InfobipTTS(log, config) {
   }
 }
 
-InfobipTTS.prototype.getServices = function() {
+InfobipSMS.prototype.getServices = function() {
   return [this.informationService, this._service];
 }
 
-InfobipTTS.prototype._setOn = function(on, callback) {
+InfobipSMS.prototype._setOn = function(on, callback) {
 
   this.log("Setting switch to " + on);
 

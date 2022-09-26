@@ -1,5 +1,5 @@
 {
-    "pluginAlias": "InfobipTTS",
+    "pluginAlias": "InfobipSMS",
     "pluginType": "accessory",
     "singular": false,
     "schema": {
@@ -38,11 +38,11 @@
                 "type": "number",
                 "description": "Number from which call should originate on event trigger"
             },
-            "TTSText": {
-                "title": "TTSText",
+            "SMSText": {
+                "title": "SMSText",
                 "type": "string",
                 "required": true,
-                "default": "Homebridge call via Infobip call TTS API",
+                "default": "Homebridge call via Infobip call SMS API",
                 "description": "Text to speak when called on trigger event"
             }
         }
